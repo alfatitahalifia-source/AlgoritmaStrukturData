@@ -39,5 +39,15 @@ public class DosenDemo04 {
             System.out.println("Usia: " + arrayOfDosen04s[i].usia);
             System.out.println("-----------------------------");
         }
+        DataDosen04 dataDosen04 = new DataDosen04();
+        dataDosen04.dataSemuaDosen(arrayOfDosen04s);
+        System.out.println("--------------------------------");
+        dataDosen04.jumlahDosenPerJenisKelamin(arrayOfDosen04s);
+        dataDosen04.rataRataUsiaDosen(arrayOfDosen04s);
+        System.out.println("--------------------------------");
+        dataDosen04.infoDosenTertua(arrayOfDosen04s);
+        dataDosen04.infoDosenTermuda(arrayOfDosen04s);
+        System.out.println("--------------------------------");
+
     }
 }
