@@ -1,15 +1,34 @@
 package Jobsheet3;
 
+import java.util.Scanner;
+
 public class Matakuliah04 {
     public String kode;
     public String nama;
     public int sks;
-    public String jumlahJam;
+    public int jumlahJam;
 
-    public Matakuliah04(String kode, String nama, int sks, String jumlahJam) {
-        this.kode = kode;
-        this.nama = nama;
-        this.sks = sks;
-        this.jumlahJam = jumlahJam;
+    // public Matakuliah04(String kode, String nama, int sks, int jumlahJam2) {
+    //     this.kode = kode;
+    //     this.nama = nama;
+    //     this.sks = sks;
+    //     this.jumlahJam = jumlahJam;
+    // }
+    public void tambahData(Scanner sc) {
+        System.out.print("Masukkan Kode: ");
+            kode = sc.nextLine();
+            System.out.print("Masukkan Nama: ");
+            nama = sc.nextLine();
+            System.out.print("Masukkan SKS: ");
+            sks = Integer.parseInt(sc.nextLine());
+            System.out.print("Masukkan Jumlah Jam: ");
+            jumlahJam = Integer.parseInt(sc.nextLine());
+            System.out.println();
+    }
+    public void cetakInfo() {
+        System.out.println("Kode: " + kode);
+        System.out.println("Nama: " + nama);
+        System.out.println("SKS: " + sks);
+        System.out.println("Jumlah Jam: " + jumlahJam);
     }
 }
