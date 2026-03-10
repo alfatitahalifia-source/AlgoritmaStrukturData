@@ -8,10 +8,8 @@ public class pangkat {
     }
     int PangkatBF(int a, int n){
         int hasil = 1;
-        int i = 1;
-        while(i <= n){
-            hasil = hasil * a;
-            i++;    
+        for(int i=1; i<=n; i++){
+            hasil *= a;    
         }
         return hasil;
     }
