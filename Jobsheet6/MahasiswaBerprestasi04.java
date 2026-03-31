@@ -1,8 +1,12 @@
 package Jobsheet6;
 
 public class MahasiswaBerprestasi04 {
-    Mahasiswa04[] listMhs= new Mahasiswa04[5];
+    Mahasiswa04[] listMhs;
     int idx;
+    MahasiswaBerprestasi04(int n) {
+        listMhs = new Mahasiswa04[n];
+        idx = 0;
+    }
 
     void tambah(Mahasiswa04 m) {
         if (idx < listMhs.length) {
@@ -40,6 +44,17 @@ public class MahasiswaBerprestasi04 {
             Mahasiswa04 tmp = listMhs[i];
             listMhs[idxMin] = listMhs[idxMin];
             listMhs[i] = tmp;
+        }
+    }
+    void insertionSort() {
+        for (int i = 1; i < listMhs.length; i++) {
+            Mahasiswa04 tmp = listMhs[i];
+            int j = i;
+            while (j >= 0 && listMhs[j-1].ipk > tmp.ipk) {
+                listMhs[j] = listMhs[j-1];
+                j--;
+            }
+            listMhs[j] = tmp;
         }
     }
 }
