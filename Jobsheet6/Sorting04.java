@@ -29,6 +29,19 @@ public class Sorting04 {
         }
         System.out.println();
     }
+    void SelectionSort() {
+        for (int i = 0; i < jumData - 1; i++) {
+            int indexMin = i;
+            for (int j = i + 1; j < jumData; j++) {
+                if (data[j] < data[indexMin]) {
+                    indexMin = j;
+                }
+            }
+            int temp = data[i];
+            data[i] = data[indexMin];
+            data[indexMin] = temp;
+        }
+    }
 }
 
 
