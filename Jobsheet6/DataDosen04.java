@@ -12,15 +12,17 @@ public class DataDosen04 {
             System.out.println("Data sudah penuh");
         }
     }
+
     void tampil() {
-        for (Dosen04 d : dataDosen) {
-            d.tampilInformasi();
+        for (int i = 0; i < idx; i++) {
+            dataDosen[i].tampilInformasi();
             System.out.println("-------------------");
         }
     }
+
     void bubbleSort() {
-        for (int i = 0; i < dataDosen.length - 1; i++) {
-            for (int j = 0; j < dataDosen.length - i - 1; j++) {
+        for (int i = 0; i < idx - 1; i++) {
+            for (int j = 0; j < idx - i - 1; j++) {
                 if (dataDosen[j].usia > dataDosen[j + 1].usia) {
                     Dosen04 temp = dataDosen[j];
                     dataDosen[j] = dataDosen[j + 1];
@@ -29,11 +31,12 @@ public class DataDosen04 {
             }
         }
     }
+
     void selectionSort() {
-        for (int i = 0; i < dataDosen.length - 1; i++) {
+        for (int i = 0; i < idx - 1; i++) {
             int minIdx = i;
-            for (int j = i + 1; j < dataDosen.length; j++) {
-                if (dataDosen[j].usia < dataDosen[minIdx].usia) {
+            for (int j = i + 1; j < idx; j++) {
+                if (dataDosen[j].usia > dataDosen[minIdx].usia) {
                     minIdx = j;
                 }
             }
@@ -42,8 +45,9 @@ public class DataDosen04 {
             dataDosen[i] = temp;
         }
     }
+
     void insertionSort() {
-        for (int i = 1; i < dataDosen.length; i++) {
+        for (int i = 1; i < idx; i++) {
             Dosen04 key = dataDosen[i];
             int j = i - 1;
             while (j >= 0 && dataDosen[j].usia > key.usia) {
@@ -53,5 +57,5 @@ public class DataDosen04 {
             dataDosen[j + 1] = key;
         }
     }
-}
 
+}

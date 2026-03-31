@@ -5,8 +5,6 @@ public class Dosen04 {
     Boolean jenisKelamin;
     int usia;
 
-    Dosen04() {
-    }   
     Dosen04(String kode, String nama, Boolean jenisKelamin, int usia) {
         this.kode = kode;
         this.nama = nama;
