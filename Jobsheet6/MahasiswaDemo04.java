@@ -31,5 +31,9 @@ public class MahasiswaDemo04 {
         System.out.println("\n=== BUBBLE SORT (DESCENDING) ===");
         list.tampil();
 
+        list.selectionSort();
+        System.out.println("\n=== SELECTION SORT (ASCENDING) ===");
+        list.tampil();
+
     }
 }
