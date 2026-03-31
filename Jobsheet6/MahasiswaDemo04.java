@@ -5,10 +5,10 @@ import java.util.Scanner;
 public class MahasiswaDemo04 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        MahasiswaBerprestasi04 list = new MahasiswaBerprestasi04();
         System.out.print("Masukkan jumlah mahasiswa: ");
         int n = sc.nextInt();
         sc.nextLine();
+        MahasiswaBerprestasi04 list = new MahasiswaBerprestasi04(n);
 
         for (int i = 0; i < n; i++) {
             System.out.println("\nData Mahasiswa ke-" + (i + 1));
@@ -27,13 +27,16 @@ public class MahasiswaDemo04 {
         System.out.println("\n=== DATA SEBELUM SORTING ===");
         list.tampil();
 
-        list.bubbleSort();
         System.out.println("\n=== BUBBLE SORT (DESCENDING) ===");
+        list.bubbleSort();
         list.tampil();
 
-        list.selectionSort();
         System.out.println("\n=== SELECTION SORT (ASCENDING) ===");
+        list.selectionSort();
         list.tampil();
 
+        System.out.println("\n=== INSERTION SORT (ASCENDING) ==="); 
+        list.insertionSort();
+        list.tampil();
     }
 }
