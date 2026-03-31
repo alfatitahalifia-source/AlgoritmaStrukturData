@@ -2,13 +2,13 @@ package Jobsheet6;
 
 public class SortingMain04 {
     public static void main(String[] args) {
-        int b[] = {30, 20, 2, 8, 14};
-        Sorting04 dataurut2 = new Sorting04(b, b.length);
+        int c[] = {40, 10, 4, 9, 3};
+        Sorting04 dataurut3 = new Sorting04(c, c.length);
 
-        System.out.println("Data awal 2");
-        dataurut2.tampil();
-        dataurut2.bubbleSort();
+        System.out.println("Data awal 3");
+        dataurut3.tampil();
+        dataurut3.bubbleSort();
         System.out.println("Data setelah diurutkan dengan bubble sort (Ascending):");
-        dataurut2.tampil();
+        dataurut3.tampil();
     }
 }
