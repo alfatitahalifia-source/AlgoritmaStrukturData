@@ -28,6 +28,7 @@ public class MahasiswaDemo04 {
         list.tampil();
         System.out.println("--------------------");
         System.out.println(" PENCARIAN DATA ");
+        System.out.println("--------------------");
         System.out.println("Masukkan IPK yang dicari: ");
         System.out.print("IPK : ");
         double cari = sc.nextDouble();
@@ -37,6 +38,18 @@ public class MahasiswaDemo04 {
         int pss = (int) posisi;
         list.tampilPosisi(cari, pss);
         list.tampilDataSearch(cari, pss);
+
+        System.out.println("Pencarian data");
+        System.out.println("----------------------------");
+        System.out.println("masukkan ipk mahasiswa yang dicari: ");
+        System.out.print("IPK : ");
+        double cari2 = sc.nextDouble();
+
+        System.out.println("menggunakan binary search");
+        double posisi2 = list.findBinarySearch(cari2, 0, jumMhs - 1);
+        int pss2 = (int) posisi2;
+        list.tampilPosisi(cari2, pss2);
+        list.tampilDataSearch(cari2, pss2);
 
         System.out.println("\n=== DATA SEBELUM SORTING ===");
         list.tampil();
