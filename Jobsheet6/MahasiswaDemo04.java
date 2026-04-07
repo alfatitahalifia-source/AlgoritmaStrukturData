@@ -8,9 +8,10 @@ public class MahasiswaDemo04 {
         System.out.print("Masukkan jumlah mahasiswa: ");
         int n = sc.nextInt();
         sc.nextLine();
+        int jumMhs = 5;
         MahasiswaBerprestasi04 list = new MahasiswaBerprestasi04(n);
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < jumMhs; i++) {
             System.out.println("\nData Mahasiswa ke-" + (i + 1));
             System.out.print("NIM   : ");
             String nim = sc.nextLine();
@@ -24,6 +25,19 @@ public class MahasiswaDemo04 {
             Mahasiswa04 m = new Mahasiswa04(nim, nama, kelas, ipk);
             list.tambah(m);
         }
+        list.tampil();
+        System.out.println("--------------------");
+        System.out.println(" PENCARIAN DATA ");
+        System.out.println("Masukkan IPK yang dicari: ");
+        System.out.print("IPK : ");
+        double cari = sc.nextDouble();
+
+        System.out.println("menggunakan sequential search");
+        double posisi = list.sequentialSearch(cari);
+        int pss = (int) posisi;
+        list.tampilPosisi(cari, pss);
+        list.tampilDataSearch(cari, pss);
+
         System.out.println("\n=== DATA SEBELUM SORTING ===");
         list.tampil();
 

@@ -49,12 +49,38 @@ public class MahasiswaBerprestasi04 {
     void insertionSort() {
         for (int i = 1; i < listMhs.length; i++) {
             Mahasiswa04 tmp = listMhs[i];
-            int j = i;
-            while (j >= 0 && listMhs[j-1].ipk > tmp.ipk) {
-                listMhs[j] = listMhs[j-1];
+            int j = i- 1;
+            while (j >= 0 && listMhs[j].ipk < tmp.ipk) {
+                listMhs[j + 1] = listMhs[j];
                 j--;
             }
-            listMhs[j] = tmp;
+            listMhs[j + 1] = tmp;
+        }
+    }
+    int sequentialSearch(double cari) {
+        int posisi = -1;
+        for (int j = 0; j < listMhs.length; j++) {
+            if (listMhs[j].ipk == cari) {
+                posisi = j;
+                break;
+            }
+        }
+        return posisi;
+    }
+    void tampilPosisi(double x, int pos) {
+        if (pos != -1) {
+            System.out.println("Mahasiswa dengan IPK " + x + " ditemukan pada indeks " + pos);
+        } else {
+            System.out.println("Mahasiswa dengan IPK " + x + " tidak ditemukan");
+        }
+    }
+    void tampilDataSearch(double x, int pos) {
+        if (pos != -1) {
+            System.out.println("Nama: " + listMhs[pos].nama);
+            System.out.println("NIM: " + listMhs[pos].nim);
+            System.out.println("IPK: " + listMhs[pos].ipk);
+        } else {
+            System.out.println("Data mahasiswa dengan IPK " + x + " tidak ditemukan");
         }
     }
 }
