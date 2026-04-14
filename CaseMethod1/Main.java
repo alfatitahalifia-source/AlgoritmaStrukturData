@@ -32,6 +32,7 @@ public class Main {
             System.out.println("3. Tampilkan Peminjaman");
             System.out.println("4. Urutkan Berdasarkan Denda");
             System.out.println("5. Cari Berdasarkan NIM");
+            System.out.println("6. Hitung total denda ");
             System.out.println("0. Keluar");
             System.out.print("Pilih menu: ");
             pilih = sc.nextInt();
@@ -40,8 +41,8 @@ public class Main {
             switch (pilih) {
                 case 1:
                     System.out.println("\nData Mahasiswa:");
-                    for (Mahasiswa m : mhs) {
-                        m.tampilInformasi();
+                    for (int i = 0; i < mhs.length; i++) {
+                        mhs[i].tampilInformasi();
                         System.out.println();
                     }
                     break;
@@ -90,6 +91,15 @@ public class Main {
                     if (!found) {
                         System.out.println("NIM tidak ditemukan!");
                     }
+                    break;
+                case 6:
+                    int totalDenda = 0;
+                    for (Peminjaman p : pinjam) {
+                        p.hitungDenda();
+                        System.out.println(p.mhs.nama + " - " + p.buku.judul + " selama " + p.lamaPinjam + " hari, terlambat " + p.terlambat + " hari, denda Rp " + p.denda);
+                        totalDenda += p.denda;
+                    }
+                    System.out.println("Total denda: Rp " + totalDenda);
                     break;
                 case 0:
                     System.out.println("Terima kasih!");
