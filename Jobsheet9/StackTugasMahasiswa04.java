@@ -1,10 +1,11 @@
 package Jobsheet9;
 
-import CaseMethod1.Mahasiswa;
+import Jobsheet9.StackTugasMahasiswa04;
 
 public class StackTugasMahasiswa04 {
     Mahasiswa04[] stack;
     int top, size;
+    
 
     public StackTugasMahasiswa04(int size){
         this.size = size;
@@ -66,5 +67,18 @@ public class StackTugasMahasiswa04 {
     }
     public int jumlahTugas() {
         return top + 1;
+    }
+    public String konversiDesimalkeBiner(int nilai) {
+        StackKonversi stack = new StackKonversi();
+        while (nilai > 0) {
+            int sisa = nilai % 2;
+            stack.push(sisa);
+            nilai /= 2;
+        }
+        String biner = new String();
+        while (!stack.isEmpty()) {
+            biner += stack.pop();
+        }
+        return biner;
     }
 }
