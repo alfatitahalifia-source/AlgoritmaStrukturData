@@ -1,5 +1,7 @@
 package Jobsheet9;
 
+import CaseMethod1.Mahasiswa;
+
 public class StackTugasMahasiswa04 {
     Mahasiswa04[] stack;
     int top, size;
@@ -54,5 +56,12 @@ public class StackTugasMahasiswa04 {
             System.out.println(stack[i].nama + " \t " + stack[i].nim + " \t " + stack[i].kelas );
         }
         System.out.println("");
+    }
+    public Mahasiswa04 lihatBawah() {
+        if (!isEmpty()) {
+            return stack[0];
+        } else {
+            return null;
+        }
     }
 }
