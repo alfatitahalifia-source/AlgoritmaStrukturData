@@ -13,6 +13,7 @@ public class MahasiswaDemo04 {
         System.out.println("3. Melihat Tugas Teratas");
         System.out.println("4. Melihat Daftar Tugas");
         System.out.println("5. Melihat Tugas Terbawah");
+        System.out.println("6. Jumlah Tugas");
         System.out.print("Pilih menu: ");
         int pilihan = sc.nextInt();
         sc.nextLine();
