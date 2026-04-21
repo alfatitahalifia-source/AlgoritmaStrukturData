@@ -56,8 +56,12 @@ public class MahasiswaDemo04 {
                     System.out.println("Tugas pertama dikumpulkan oleh: " + bawah.nama);
                 }
                 break;
+            case 6:
+                System.out.println("Jumlah Tugas saat ini: " + (stack.jumlahTugas()));
+                break;
             default:
                 System.out.println("Pilihan tidak valid. Silakan coba lagi.");
+                break;
         }
         } while (true);
     }
