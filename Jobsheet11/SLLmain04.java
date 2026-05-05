@@ -3,6 +3,8 @@ import java.util.Scanner;
 public class SLLmain04 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        //System.out.print("Masukkan NIM : ");
+        //String nim = sc.nextLine();
         singlelinkedlist04 sll = new singlelinkedlist04();
         mahasiswa04 mhs1 = new mahasiswa04("21212203", "Dirga", "4D", 3.6);
         mahasiswa04 mhs2 = new mahasiswa04("21212202", "Cintia", "3C", 3.5);
@@ -21,6 +23,18 @@ public class SLLmain04 {
         sll.print();
 
         sll.insertAt(2, mhs2);
+        sll.print();
+
+        System.out.println("data pada indeks ke-1 : ");
+        sll.getData(1);
+
+        System.out.println("data mahasiswa an Bimon berada pada indeks : " + sll.indexOf("Bimon"));
+        System.out.println();
+
+        sll.removeFirst();
+        sll.removeLast();
+        sll.print();
+        sll.removeAt(0);
         sll.print();
     }
 }
