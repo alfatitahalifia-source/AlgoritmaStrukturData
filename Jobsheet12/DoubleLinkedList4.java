@@ -130,4 +130,23 @@ public class DoubleLinkedList4 {
             current = current.next;
         }
     }
+
+    public void printReverse() {
+
+        if (isEmpty()) {
+
+            System.out.println("Data kosong");
+            return;
+        }
+
+        Node4 current = tail;
+
+        while (current != null) {
+
+            current.data.tampil();
+            System.out.println("------------------");
+
+            current = current.prev;
+        }
+    }
 }
