@@ -59,5 +59,6 @@ public class Main {
                     System.out.println("Pilihan tidak valid. Silakan coba lagi.");
             }
         } while (pilih != 0);
+        sc.close();
     }
 }
