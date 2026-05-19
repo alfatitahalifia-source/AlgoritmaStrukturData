@@ -6,6 +6,17 @@ public class Main {
         DoubleLinkedListAntrian antrian = new DoubleLinkedListAntrian();
         DoubleLinkedListPesanan pesananList = new DoubleLinkedListPesanan();
         int pilih;
+        //Data Dummy
+        pembeli p1 = new pembeli("Alfatitah", "085643210102", "08.00");
+        pembeli p2 = new pembeli("Alifia", "08675342187", "09.00");
+        pembeli p3 = new pembeli("Putri", "0867548397372", "23.00");
+        pembeli p4 = new pembeli("Titah", "08648253648922", "12.00");
+        //Menambahkan data 
+        antrian.tambahAntrian(p1);
+        antrian.tambahAntrian(p2);
+        antrian.tambahAntrian(p3);
+        antrian.tambahAntrian(p4);
+
         do {
             System.out.println("================================");
             System.out.println("SISTEM ANTREAN ROYAL DELISH");
@@ -25,7 +36,9 @@ public class Main {
                     String nama = sc.nextLine();
                     System.out.print("Masukkan nomor telepon: ");
                     String noTelp = sc.nextLine();
-                    pembeli pembeliBaru = new pembeli(nama, noTelp);
+                    System.out.print("Masukkan Waktu Daftarn: ");
+                    String waktuDaftar = sc.nextLine();
+                    pembeli pembeliBaru = new pembeli(nama, noTelp,waktuDaftar);
                     antrian.tambahAntrian(pembeliBaru);
                     break;
                 case 2:

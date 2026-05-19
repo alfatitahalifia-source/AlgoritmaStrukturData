@@ -33,10 +33,10 @@ public class DoubleLinkedListAntrian {
         System.out.println("================================");
         System.out.println("Daftar Antrian Pembeli:");
         System.out.println("================================");
-        System.out.println("Nomor Antrian |\t Nama Pembeli |\t No Telepon");
+        System.out.println("Nomor Antrian |\t Nama Pembeli |\t No Telepon |\t Waktu");
         // Traversal node satu per satu sampai null
         while (tmp != null) {
-            System.out.println(tmp.nomorAntrian + " \t\t " + tmp.pembeli.namaPembeli + " \t\t " + tmp.pembeli.noTelepon);
+            System.out.println(tmp.nomorAntrian + " \t\t " + tmp.pembeli.namaPembeli + " \t\t " + tmp.pembeli.noTelepon + "\t\t" + tmp.pembeli.daftarWaktu);
             tmp = tmp.next;
         }
     }
