@@ -4,7 +4,7 @@ public class BinaryTree04 {
     public BinaryTree04() {
         root = null;
     }
-    
+
     public boolean isEmpty() {
         return root == null;
     }
@@ -89,7 +89,7 @@ public class BinaryTree04 {
         return successor;
     }
 
-    void delete(double ipk){
+    void delete(double ipk) {
         if (isEmpty()) {
             System.out.println("Binary tree masih kosong");
             return;
@@ -114,12 +114,12 @@ public class BinaryTree04 {
         if (current == null) {
             System.out.println("Data tidak ditemukan");
             return;
-        }else {
+        } else {
             // jika node yang akan dihapus adalah leaf node
             if (current.left == null && current.right == null) {
                 if (current == root) {
                     root = null;
-                } else{
+                } else {
                     if (isLeftChild) {
                         parent.left = null;
                     } else {
@@ -131,7 +131,7 @@ public class BinaryTree04 {
             else if (current.left == null) {
                 if (current == root) {
                     root = current.right;
-                } else{
+                } else {
                     if (isLeftChild) {
                         parent.left = current.right;
                     } else {
@@ -141,7 +141,7 @@ public class BinaryTree04 {
             } else if (current.right == null) {
                 if (current == root) {
                     root = current.left;
-                } else{
+                } else {
                     if (isLeftChild) {
                         parent.left = current.left;
                     } else {
@@ -164,6 +164,51 @@ public class BinaryTree04 {
                 successor.left = current.left;
             }
         }
+    }
 
+    void addRekursif(Mahasiswa04 mahasiswa) {
+        root = addRekursif(root, mahasiswa);
+    }
+
+    Node04 addRekursif(Node04 current, Mahasiswa04 mahasiswa) {
+        if (current == null) {
+            return new Node04(mahasiswa);
+        }
+        if (mahasiswa.ipk < current.mahasiswa.ipk) {
+            current.left = addRekursif(current.left, mahasiswa);
+        } else if (mahasiswa.ipk > current.mahasiswa.ipk) {
+            current.right = addRekursif(current.right, mahasiswa);
+        }
+        return current;
+    }
+
+    void cariMinIPK() {
+        Node04 current = root;
+        while (current.left != null) {
+            current = current.left;
+        }
+        System.out.println("IPK terkecil:");
+        current.mahasiswa.tampilkanInfo();
+    }
+
+    void cariMaxIPK() {
+        Node04 current = root;
+        while (current.right != null) {
+            current = current.right;
+        }
+        System.out.println("IPK terbesar:");
+        current.mahasiswa.tampilkanInfo();
+    }
+    void tampilMahasiswaIPKdiAtas(double ipkBatas) {
+        tampilMahasiswaIPKdiAtas(root, ipkBatas);
+    }
+    void tampilMahasiswaIPKdiAtas(Node04 node, double ipkBatas) {
+        if (node != null) {
+            tampilMahasiswaIPKdiAtas(node.left, ipkBatas);
+            if (node.mahasiswa.ipk > ipkBatas) {
+                node.mahasiswa.tampilkanInfo();
+            }
+            tampilMahasiswaIPKdiAtas(node.right, ipkBatas);
+        }
     }
 }
